@@ -68,7 +68,7 @@ def gensim_sim(content,test_news):
     #    print   "index:%d similarities:%d" % (index, similarities)
     for index, score in sorted(enumerate(sim), key=lambda item: -item[1])[:6]:
         #print   "index:%d similarities:%f" % (index, score)
-        print   "index:%d similarities:%f content:%s" % (index, score, content[index])
+        print("index:%d similarities:%f content:%s" % (index, score, content[index]))
 
 
 def gensim_simhash(content,test_news):
@@ -96,7 +96,7 @@ def gensim_simhash(content,test_news):
 
     for index, score in sorted(enumerate(sim), key=lambda item: item[1])[:6]:
         # print   "index:%d similarities:%f" % (index, score)
-        print   "index:%d similarities:%f content:%s" % (index, score, content[index])
+        print("index:%d similarities:%f content:%s" % (index, score, content[index]))
 
 
 def gensim_cos(content,test_news):
@@ -133,23 +133,19 @@ def gensim_cos(content,test_news):
 
     for index, score in sorted(enumerate(cos), key=lambda item: item[1])[:6]:
         # print   "index:%d similarities:%f" % (index, score)
-        print   "index:%d similarities:%f content:%s" % (index, score, content[index])
+        print("index:%d similarities:%f content:%s" % (index, score, content[index]))
 
 if __name__ == '__main__':
-    reload(sys)
-    sys.setdefaultencoding('utf8')
-
-
     #加载搜狐新闻语料
-    content=load_sougou_content()
+    content = ""
 
 
     #设置测试文章
-    print "select test data:"
-    test_news=content[88]
-    print test_news
+    print('select test data:')
+    test_news=""
+    print(test_news)
 
-    print "使用余弦计算相似度"
+    print("使用余弦计算相似度")
     gensim_sim(content, test_news)
 
     #print "simhash"
