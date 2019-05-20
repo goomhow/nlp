@@ -35,7 +35,7 @@ def load_SogouTCE():
     for index,url in enumerate(SogouTCE):
         #删除http前缀
         url=re.sub('http://','',url)
-        print "k:%s v:%d" % (url,index)
+        print("k:%s v:%d" % (url,index))
         SogouTCE_kv[url]=index
 
     return  SogouTCE_kv
@@ -48,7 +48,7 @@ def load_url(SogouTCE_kv):
             for k,v in SogouTCE_kv.items():
                 if re.search(k,line,re.IGNORECASE):
                     #print "x:%s y:%d" % (line,v)
-                    print v
+                    print(v)
                     labels.append(v)
                 #else:
                 #    print "not found %s" %(line)
